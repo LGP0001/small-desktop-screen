@@ -1,67 +1,42 @@
-[中文](README_CN.md) | English
+English | [中文](README.md)
 
-# Desktop Small Screen Software Development Knowledge Expansion Tutorial
+# FreeRTOS Task Creation Tutorial
 
-## Course Introduction
+This tutorial is divided into two versions: Basic and Professional. The Basic version is mainly for beginners, explaining what a task is in a simple and understandable manner, and assisting you in implementing basic task creation through video tutorials. The Professional version is for learners with some foundation, referencing the FreeRTOS Real-Time Kernel Chinese Manual to delve into the theory and practice of task creation.
 
-This tutorial aims to expand the software development knowledge in the original desktop small screen development tutorial by delving into explanations and comparing implementations across different microcontroller platforms, providing richer context for the example code. This tutorial is not only a knowledge expansion project, but also a self-learning and exploration journey.
+## Learning Objectives
 
-For a complete learning experience, it is strongly recommended to review the original course first:
-- [Original Course Document](https://x509p6c8to.feishu.cn/docx/NQCTdjUFJoYoZ1xYHS9cIlbwnxh)
-- [Original Course Video](https://www.bilibili.com/video/BV1wV4y1G7Vk?p=1&vd_source=43aebb8344792e06500b46f018a5c4b9)
-
-## Target Audience
-
-- Students and professionals interested in software development and embedded systems.
-
-## Learning Outcomes
-
-By the end of this extension tutorial, learners will:
-1. Better understand the intent and implementation details of the example code in the original course.
-2. Understand general programming concepts and common principles of embedded system development by comparing implementations across different platforms.
-3. Enhance self-learning and independent problem-solving abilities.
-
-## Software Environment
-
-- Ubuntu 18.04
-- Windows 11
-- Visual Studio Code (via SSH connection)
+- Understand what a task is and its importance in FreeRTOS.
+- Learn how to create and manage tasks in FreeRTOS.
+- Deepen understanding of task creation through practice.
 
 ## Learning Resources
 
-In addition to this tutorial, there are many quality resources to help you delve deeper into the relevant knowledge of embedded systems and software development. Here are some recommended learning resources:
+- Basic version video tutorial: [Video Tutorial](https://www.bilibili.com/video/BV1wV4y1G7Vk/?p=24&vd_source=43aebb8344792e06500b46f018a5c4b9)
+- Professional version reference material: [FreeRTOS Real-Time Kernel Chinese Manual](/home/lgp/Desktop/SDS/FreeRTOS实时内核使用指南-中文.pdf)
+- esp-idf reference material: [FreeRTOS Free Real-Time Operating System](https://docs.espressif.com/projects/esp-idf/en/release-v4.1/api-reference/system/freertos.html)
 
-- Books:
-  - "Microcontroller Principles and Interface Technology" (Tsinghua University Press)
-  - "Embedded Microcontroller STM32 Principles and Applications" (Mechanical Industry Press)
+## Learning Content
 
-- Websites, Videos, and Forums:
-  - [Zhi Dian Yuan (Atom)](http://www.openedv.com/)
-  - [Wildfire Electronics](http://www.firebbs.cn/forum.php)
-  - [Jiang Xie Technology](https://space.bilibili.com/383400717?spm_id_from=333.337.0.0)
-  - [ESP32 Official Forum](https://esp32.com/)
-  - [STM32 Official Forum](https://www.st.com/content/st_com/en/support/learning/stm32-education.html)
-  - [51 Microcontroller Forum](http://www.ourmcu.com/)
-  - [Embedded System Design and Application Forum](http://bbs.eeworld.com.cn/forum-505-1.html)
-  - [Electro-Tech-Online - Embedded Systems and Microcontrollers](https://www.electro-tech-online.com/forums/embedded-systems-and-microcontrollers.77/)
+### [Basic Version](Basic_Version.md)
 
-## How to Use This Tutorial
+1. **What is a Task**: Simply explain what a task is and why we need tasks.
+2. **Creating Your First Task**: Learn how to create and run your first task through a video tutorial.
 
-1. Clone this repository to your local environment.
-2. Check out to the branch corresponding to the chapter you want to learn.
-3. Follow the guidelines and code examples in the branch for learning.
+### [Professional Version](Professional_Version.md)
 
-For example, if you want to learn the "Task Creation" chapter, you should execute the following command to switch to the corresponding branch:
+1. **Task Creation Theory**: Deeply understand the basics of task management in FreeRTOS, including processing time allocation, task selection and running, how task priority affects system behavior, and the various states of tasks.
+2. **Task Creation Practice**: Explore the creation and management of queues through example code, as well as how to implement communication and synchronization between tasks.
+3. **Task States and Scheduling**: Discuss interrupt management, including FreeRTOS API that can be used in Interrupt Service Routines (ISR), delayed interrupt schemes, creation and use of binary semaphores and counting semaphores, and how to pass data in ISR through queues.
+4. **Resource Management and Control**: Detailed introduction to the necessity of resource management, the concept of critical sections, implementation of mutual exclusion, the significance of suspending the scheduler, and how to create and use daemon tasks. Additionally, discuss the concepts and implementations of priority inversion and priority inheritance.
+5. **Memory Management**: Understand when FreeRTOS allocates memory, including task creation, creation of queues/semaphores/mutexes, dynamic memory allocation, and memory allocation in ISR.
 
-```bash
-git checkout Task_Creation
-```
-
-## Get Help and Support
+## Getting Help
 
 If you encounter any problems or need help, feel free to raise issues in the GitHub issue tracker associated with this repository.
 
-## License and Contribution
-This project follows the MIT license agreement. For all content from the original course, please refer to the licensing provisions of the original course.
+## License and Contributions
+
+This project follows the MIT license. For all original course content, please refer to the license provisions of the original course.
 
 [View the MIT license of the original course](LICENSE)

@@ -1,62 +1,37 @@
 [English](README_EN.md) | 中文
+# FreeRTOS任务创建教程
 
-# 桌面小屏幕软件开发知识拓展教程
+本教程分为两个版本：基础版和专业版。基础版主要面向初学者，以简单易懂的方式解释什么是任务，并通过视频教程帮助你实现基本的任务创建。专业版则是针对有一定基础的学习者，参考FreeRTOS实时内核中文手册，深入讲解任务创建的理论和实践。
 
-## 课程介绍
+## 学习目标
 
-本教程旨在拓展原桌面小屏幕开发教程中的软件开发知识，通过深入解释和比较不同单片机平台的实现，为示例代码提供更丰富的上下文。本教程不仅是一个知识拓展项目，也是一个自我学习和探索的过程。
-
-为了获得完整的学习体验，强烈建议先查看原课程：
-- [原课程文档](https://x509p6c8to.feishu.cn/docx/NQCTdjUFJoYoZ1xYHS9cIlbwnxh)
-- [原课程视频](https://www.bilibili.com/video/BV1wV4y1G7Vk?p=1&vd_source=43aebb8344792e06500b46f018a5c4b9)
-
-## 目标受众
-
-- 对软件开发和嵌入式系统感兴趣的学生和专业人士。
-
-## 学习成果
-
-在本拓展教程结束时，学习者将：
-1. 更好地理解原课程中示例代码的意图和实现细节。
-2. 通过比较不同平台的实现，理解通用编程概念和嵌入式系统开发的通用原则。
-3. 增强自我学习和独立解决问题的能力。
-
-## 软件环境
-
-- Ubuntu 18.04
-- Windows 11
-- Visual Studio Code (通过 SSH 连接)
+- 理解什么是任务以及任务在FreeRTOS中的重要性。
+- 学会如何在FreeRTOS中创建和管理任务。
+- 通过实践加深对任务创建的理解。
 
 ## 学习资源
 
-除了本教程，还有很多优质的资源可以帮助你深入理解嵌入式系统和软件开发的相关知识。这里推荐一些学习资源：
+- 基础版视频教程：[视频教程](https://www.bilibili.com/video/BV1wV4y1G7Vk/?p=24&vd_source=43aebb8344792e06500b46f018a5c4b9)
+- 专业版参考资料：[FreeRTOS实时内核中文手册](/home/lgp/Desktop/SDS/FreeRTOS实时内核使用指南-中文.pdf)
+- esp-idf参考资料：[FreeRTOS 免费实时操作系统](https://docs.espressif.com/projects/esp-idf/zh_CN/release-v4.1/api-reference/system/freertos.html)
 
-- 书籍：
-  - 《单片机原理与接口技术》（清华大学出版社）
-  - 《嵌入式单片机STM32原理与应用》（机械工业出版社）
+## 学习内容
 
-- 网站，视频和论坛：
-  - [正点原子](http://www.openedv.com/)
-  - [野火电子](http://www.firebbs.cn/forum.php)
-  - [江协科技](https://space.bilibili.com/383400717?spm_id_from=333.337.0.0)
-  - [ESP32 官方论坛](https://esp32.com/)
-  - [STM32 官方论坛](https://www.st.com/content/st_com/en/support/learning/stm32-education.html)
-  - [51单片机论坛](http://www.ourmcu.com/)
-  - [嵌入式系统设计与应用论坛](http://bbs.eeworld.com.cn/forum-505-1.html)
-  - [Electro-Tech-Online - Embedded Systems and Microcontrollers](https://www.electro-tech-online.com/forums/embedded-systems-and-microcontrollers.77/)
+### [基础版](基础版.md)
 
-## 如何使用这个教程
+1. **什么是任务**：简单解释什么是任务，为什么我们需要任务。
+2. **创建你的第一个任务**：通过视频教程，学习如何创建和运行你的第一个任务。
 
-1. 克隆本仓库到你的本地环境。
-2. 检出到你想学习的章节对应的分支。
-3. 按照分支中的指南和代码示例进行学习。
+### [专业版](专业版.md)
 
-例如，如果你想学习“任务创建”这一章节，你应该执行以下命令切换到对应的分支：
+1. **任务创建理论**：深入理解 FreeRTOS 中的任务管理基础，包括处理时间分配、任务选择与运行、任务优先级对系统行为的影响、以及任务的各种状态。
+2. **任务创建实践**：通过实例代码探讨队列的创建、管理、以及如何实现任务间的通信与同步。
+3. **任务状态和调度**：探讨中断管理，包括可在中断服务例程中使用的 FreeRTOS API、延迟中断方案、二值信号量与计数信号量的创建与使用、以及如何利用队列在中断服务例程中传递数据。
+4. **资源管理与控制**：详细介绍资源管理的必要性、临界区的概念、互斥的实现、挂起调度器的意义、以及如何创建与使用守护任务。此外，还讨论了优先级反转和优先级继承的概念与实现。
+5. **内存管理**：明白 FreeRTOS 在何时进行内存分配，包括任务创建、队列/信号量/互斥量的创建、动态内存分配、以及在中断服务例程中的内存分配。
 
-```bash
-git checkout Task_Creation
-```
-## 获取帮助和支持
+
+## 获取帮助
 
 如果您遇到任何问题或需要帮助，请随时在与此仓库关联的 GitHub 问题跟踪器中提出问题。
 
