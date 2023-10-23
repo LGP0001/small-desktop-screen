@@ -1,4 +1,4 @@
-[中文](README.md) | English
+English | [中文](README.md)
 
 # Desktop Small Screen Software Development Knowledge Expansion Tutorial
 
