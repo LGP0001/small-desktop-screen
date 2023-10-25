@@ -135,7 +135,7 @@ void ds_spiffs_deinit(){
 
 #### 示例代码效果
 
-![spiffs示例代码效果](spiffs示例代码效果.png)
+![spiffs示例代码效果](spiffs示例代码效果.png)  
 在上述代码中，我们使用esp_vfs_spiffs_unregister函数卸载了SPIFFS分区，并通过日志消息确认了该操作。
 
 
