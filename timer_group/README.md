@@ -1,59 +1,51 @@
-# Example: General Purpose Timer
+# 定时器示例 (Timer Example)
 
-This example uses the timer group driver to generate timer interrupts at two specified alarm intervals.
+[English](README_EN.md) | 中文
 
-## How to Use Example
+本示例启动一个创建定时器任务，用于打印 "Hello World"。
 
-### Hardware Required
+## 如何使用示例
 
-* A development board with ESP SoC (e.g., ESP32-DevKitC, ESP-WROVER-KIT, etc.)
-* A USB cable for Power supply and programming
+按照本示例提供的详细说明进行操作。
 
-### Build and Flash
+根据你的开发板上安装的 Espressif 芯片选择相应的说明：
 
-Run `idf.py -p PORT flash monitor` to build, flash and monitor the project.
+- [ESP32 入门指南](https://docs.espressif.com/projects/esp-idf/en/stable/get-started/index.html)
+- [ESP32-S2 入门指南](https://docs.espressif.com/projects/esp-idf/en/latest/esp32s2/get-started/index.html)
 
-(To exit the serial monitor, type ``Ctrl-]``.)
+## 示例文件夹内容
 
-See the [ESP-IDF Getting Started Guide](https://idf.espressif.com/) for all the steps to configure and use the ESP-IDF to build projects.
-## Example Output
+项目 **Timer_group** 包含一个用 C 语言编写的源文件 [Task_Creation_main.c](main/Task_Creation_main.c)。文件位于 [main](main) 文件夹中。
 
-```
-Timer Group with auto reload
-Group[0], timer[0] alarm event
-------- EVENT TIME --------
-Counter: 0x0000000000000008
-Time   : 0.00000160 s
--------- TASK TIME --------
-Counter: 0x0000000000004ed8
-Time   : 0.00403680 s
-Timer Group without auto reload
-Group[1], timer[0] alarm event
-------- EVENT TIME --------
-Counter: 0x00000000017d7848
-Time   : 5.00000160 s
--------- TASK TIME --------
-Counter: 0x00000000017dcb32
-Time   : 5.00424680 s
-Timer Group with auto reload
-Group[0], timer[0] alarm event
-------- EVENT TIME --------
-Counter: 0x0000000000000008
-Time   : 0.00000160 s
--------- TASK TIME --------
-Counter: 0x0000000000004dd4
-Time   : 0.00398480 s
+ESP-IDF 项目使用 CMake 构建。项目的构建配置包含在 `CMakeLists.txt` 文件中，这些文件提供了一组描述项目源文件和目标（可执行文件、库或两者）的指令和说明。
+
+以下是项目文件夹中其余文件的简短说明。
+```plaintext
+├── CMakeLists.txt
+├── example_test.py 用于自动化示例测试的 Python 脚本
+├── main
+│ ├── CMakeLists.txt
+│ ├── component.mk 组件 make 文件
+│ └── Timer_group_example_main.c
+├── Makefile 由传统 GNU Make 使用的 Makefile
+└── README.md 你当前正在阅读的文件 currently reading
 ```
 
-## Functionality Overview
 
-* Two timers are configured
-* Each timer is set with some sample alarm interval
-* On reaching the interval value each timer will generate an alarm
-* One of the timers is configured to automatically reload it's counter value on the alarm
-* The other timer is configured to keep incrementing and is reloaded by the application each time the alarm happens
-* Alarms trigger subsequent interrupts, that is tracked with messages printed on the terminal:
+有关 ESP-IDF 项目的结构和内容的更多信息，请参阅 ESP-IDF 编程指南的 [构建系统](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/build-system.html) 部分。
 
-## Troubleshooting
+## 故障排除
 
-For any technical queries, please open an [issue](https://github.com/espressif/esp-idf/issues) on GitHub. We will get back to you soon.
+* 程序上传失败
+
+    * 硬件连接不正确：运行 `idf.py -p PORT monitor`，并重新启动你的板子，看是否有任何输出日志。
+    * 下载的波特率太高：在 `menuconfig` 菜单中降低你的波特率，然后重试。
+
+## 技术支持和反馈
+
+请使用以下反馈渠道：
+
+* 对于技术查询，请前往 [esp32.com](https://esp32.com/) 论坛
+* 对于功能请求或错误报告，请创建一个 [GitHub 问题](https://github.com/espressif/esp-idf/issues)
+
+我们会尽快回复你。
