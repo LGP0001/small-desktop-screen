@@ -3,6 +3,6 @@
 # project subdirectory.
 #
 
-PROJECT_NAME := timer_group
+PROJECT_NAME := DesktopScreen
 
 include $(IDF_PATH)/make/project.mk

@@ -46,6 +46,7 @@ timer_event_t g_timer_event;
 xQueueHandle timer_queue;
 // xQueueHandle ui_update_timer_queue;
 
+static const char *TAG = "TIME APP";
 /*
  * @description : 定时器中断服务例程，当定时器达到其警报值时触发
  *
@@ -57,7 +58,7 @@ xQueueHandle timer_queue;
 void IRAM_ATTR timer_group0_isr(void *para)
 {
     // 获取定时器的自旋锁，防止其他任务或中断干扰定时器的配置
-    timer_spinlock_take (TIMER_GROUP_0);
+    // timer_spinlock_take (TIMER_GROUP_0);
 
     // 将传递的参数转换为定时器索引
     int timer_idx = (int) para;
@@ -77,7 +78,7 @@ void IRAM_ATTR timer_group0_isr(void *para)
     xQueueSendFromISR (timer_queue, &evt, NULL);
 
     // 释放定时器的自旋锁
-    timer_spinlock_give(TIMER_GROUP_0);
+    // timer_spinlock_give(TIMER_GROUP_0);
 }
 
 
@@ -186,7 +187,7 @@ void ds_timer_init (void)
     timer_queue = xQueueCreate (10, sizeof(timer_event_t));    
 
     // 初始化定时器，设置其属性如是否自动重载和时间间隔                     
-    example_tg0_timer_init (TIMER_0, TEST_WITH_RELOAD, TIMER_INTERVALO_SEC);
+    tg0_timer_init (TIMER_0, TEST_WITH_RELOAD, TIMER_INTERVALO_SEC);
 
     // 创建一个新的任务来处理定时器事件
     // 任务名为"timer_evt_task"，堆栈大小为2048，优先级为5
