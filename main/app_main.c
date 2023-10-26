@@ -8,6 +8,8 @@
 
 # include "ds_timer.h"
 # include "ds_spiffs.h"
+# include "ds_system_data.h"
+# include "ds_nvs.h"
 
 # define CHIP_NAME "ESP32"
 
@@ -48,6 +50,13 @@ void app_main(void)
     init_spiffs();
     ds_spiffs_test();
     ds_spiffs_deinit();
+
+    char *ssid = "Leo";
+    char *psw = "123456789";
+    set_system_data_wifi_info(ssid,strlen(ssid),psw,strlen(psw));
+    ds_nvs_init();
+    ds_nvs_save_wifi_info();
+    ds_nvs_read_wifi_info();
 
     xTaskCreate(test_task_example, "test_task_example", 2048, NULL, 10, NULL);
 
