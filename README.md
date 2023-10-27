@@ -13,7 +13,7 @@
 - 基础版示例代码：[GitHub仓库链接](https://github.com/LGP0001/small-desktop-screen.git)
 - STM32参考资料：[STM32标准外设库](https://www.st.com/en/development-tools/stsw-stm32054.html)
 - ESP32参考资料：[ESP-IDF GPIO API文档](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/api-reference/peripherals/gpio.html)
-- esp-idf参考资料：[FreeRTOS 免费实时操作系统](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/api-reference/system/freertos.html)
+
 
 ## 学习内容
 
